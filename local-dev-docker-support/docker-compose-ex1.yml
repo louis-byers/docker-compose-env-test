@@ -1,0 +1,7 @@
+services:
+  echo-test:
+    image: ubuntu:latest
+    entrypoint: /bin/bash
+    command: ["-c", "env && echo 'Test Value from env TEST_VALUE: $TEST_VALUE'"]
+    env_file:
+      - path: ../.env

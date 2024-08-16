@@ -1,0 +1,9 @@
+services:
+  echo-test:
+    image: amazon/aws-cli:latest
+    entrypoint: /bin/bash
+    command: ["-c", "env && echo 'Test Value from env TEST_VALUE: $TEST_VALUE'"]
+    env_file:
+      - path: ../.env
+    environment:
+      TEST_VALUE: ${TEST_VALUE}
